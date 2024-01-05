@@ -70,12 +70,12 @@ def get_last_hour_data(json_file_path):
     return last_hour_data
 
 
-#next step : multi API
-api_key = '400aa01f5c5f0d64aaaa45ddbaa8840fcf48bc16ca63b27f37b3016dbdbb911f'
 
-#next step : multi json input
+api_key = 'Masukkan API KEY disini'
+
+#Masukkan direktori json yang mau di scan
 json_file_path = 'dionaea.json'
-
+#Masukkan direktori untuk menyimpan hasil scan (web)
 report_file_path = r'D:\report.txt'
 
 if not os.path.isfile(report_file_path):
@@ -87,8 +87,6 @@ data_files = w.read()
 data_into_lists = data_files.splitlines()
 
 value_into_lists = list()
-
-#next step : get all json input
 result = get_last_hour_data(json_file_path)
 unique = { each['src_ip'] : each for each in result }.values()
 for uni in unique:
